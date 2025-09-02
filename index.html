@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard 1 — Panel Base (Feb–Ago 2025)</title>
+<style>
+  :root{
+    --fg:#0f172a; /* slate-900 */
+    --muted:#64748b; /* slate-500 */
+    --line:#e2e8f0; /* slate-200 */
+    --bg:#ffffff; --accent:#2563eb; /* azul */
+  }
+  html,body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:var(--fg); background:var(--bg);}
+  .wrap{max-width:1100px; margin:24px auto 60px; padding:0 16px;}
+  h1{font-size:22px; margin:0 0 6px 0}
+  .muted{color:var(--muted); font-size:12px}
+  hr{border:0; border-top:1px solid var(--line); margin:18px 0}
+  table{border-collapse:collapse; width:100%; font-size:14px; margin:10px 0 24px}
+  th,td{border:1px solid var(--line); padding:8px 10px; vertical-align:middle}
+  thead th{background:#f8fafc; font-weight:600; text-align:center}
+  td.right, th.right{text-align:right}
+  td.center, th.center{text-align:center}
+  .total-row td, .total-row th{font-weight:700}
+  caption{caption-side: top; text-align:left; font-weight:600; margin:16px 0 6px}
+  .note{font-size:12px; color:var(--muted)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Dashboard 1 — Panel Base</h1>
+    <div class="muted">Periodo: <b>Feb–Ago 2025</b> · Corte: <b>31/08/2025</b> · Moneda: <b>UF (sin decimales)</b></div>
+    <hr/>
+
+    <!-- Tabla 1 — Prima (UF) por mes y dealer -->
+    <table aria-label="Tabla 1 — Prima (UF) por mes y dealer">
+      <caption>Tabla 1 — Prima (UF) por mes y dealer</caption>
+      <thead>
+        <tr>
+          <th>Dealer / Mes</th>
+          <th class="right">Feb 25</th>
+          <th class="right">Mar 25</th>
+          <th class="right">Abr 25</th>
+          <th class="right">May 25</th>
+          <th class="right">Jun 25</th>
+          <th class="right">Jul 25</th>
+          <th class="right">Ago 25</th>
+          <th class="right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>E. Kovacs</td>
+          <td class="right">310</td><td class="right">87</td><td class="right">130</td><td class="right">330</td><td class="right">965</td><td class="right">998</td><td class="right">927</td><td class="right">3.747</td>
+        </tr>
+        <tr>
+          <td>Otros</td>
+          <td class="right">0</td><td class="right">0</td><td class="right">358</td><td class="right">515</td><td class="right">1.284</td><td class="right">1.866</td><td class="right">2.856</td><td class="right">6.879</td>
+        </tr>
+        <tr class="total-row">
+          <td><b>Total</b></td>
+          <td class="right"><b>310</b></td>
+          <td class="right"><b>87</b></td>
+          <td class="right"><b>488</b></td>
+          <td class="right"><b>844</b></td>
+          <td class="right"><b>2.249</b></td>
+          <td class="right"><b>2.864</b></td>
+          <td class="right"><b>3.783</b></td>
+          <td class="right"><b>10.626</b></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table aria-label="% por Mes (Prima)">
+      <caption>% por Mes (Prima)</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th class="center">Feb 25</th><th class="center">Mar 25</th><th class="center">Abr 25</th><th class="center">May 25</th><th class="center">Jun 25</th><th class="center">Jul 25</th><th class="center">Ago 25</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>% E. Kovacs</td>
+          <td class="center">100%</td><td class="center">100%</td><td class="center">27%</td><td class="center">39%</td><td class="center">43%</td><td class="center">35%</td><td class="center">25%</td>
+        </tr>
+        <tr>
+          <td>% Otros</td>
+          <td class="center">0%</td><td class="center">0%</td><td class="center">73%</td><td class="center">61%</td><td class="center">57%</td><td class="center">65%</td><td class="center">75%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table aria-label="Variación mensual (Total Prima)">
+      <caption>Variación mensual (Total Prima)</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th class="center">Feb 25</th><th class="center">Mar 25</th><th class="center">Abr 25</th><th class="center">May 25</th><th class="center">Jun 25</th><th class="center">Jul 25</th><th class="center">Ago 25</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Δ % Total Prima</td>
+          <td class="center">—</td><td class="center">-71%</td><td class="center">+464%</td><td class="center">+73%</td><td class="center">+166%</td><td class="center">+27%</td><td class="center">+32%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Tabla 2 — Pólizas por mes y dealer -->
+    <table aria-label="Tabla 2 — Pólizas por mes y dealer">
+      <caption>Tabla 2 — Pólizas por mes y dealer</caption>
+      <thead>
+        <tr>
+          <th>Dealer / Mes</th>
+          <th class="right">Feb 25</th>
+          <th class="right">Mar 25</th>
+          <th class="right">Abr 25</th>
+          <th class="right">May 25</th>
+          <th class="right">Jun 25</th>
+          <th class="right">Jul 25</th>
+          <th class="right">Ago 25</th>
+          <th class="right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>E. Kovacs</td>
+          <td class="right">9</td><td class="right">3</td><td class="right">4</td><td class="right">13</td><td class="right">38</td><td class="right">39</td><td class="right">37</td><td class="right">143</td>
+        </tr>
+        <tr>
+          <td>Otros</td>
+          <td class="right">0</td><td class="right">0</td><td class="right">13</td><td class="right">18</td><td class="right">55</td><td class="right">82</td><td class="right">120</td><td class="right">288</td>
+        </tr>
+        <tr class="total-row">
+          <td><b>Total</b></td>
+          <td class="right"><b>9</b></td>
+          <td class="right"><b>3</b></td>
+          <td class="right"><b>17</b></td>
+          <td class="right"><b>31</b></td>
+          <td class="right"><b>93</b></td>
+          <td class="right"><b>121</b></td>
+          <td class="right"><b>157</b></td>
+          <td class="right"><b>431</b></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table aria-label="% por Mes (Pólizas)">
+      <caption>% por Mes (Pólizas)</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th class="center">Feb 25</th><th class="center">Mar 25</th><th class="center">Abr 25</th><th class="center">May 25</th><th class="center">Jun 25</th><th class="center">Jul 25</th><th class="center">Ago 25</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>% E. Kovacs</td>
+          <td class="center">100%</td><td class="center">100%</td><td class="center">24%</td><td class="center">42%</td><td class="center">41%</td><td class="center">32%</td><td class="center">24%</td>
+        </tr>
+        <tr>
+          <td>% Otros</td>
+          <td class="center">0%</td><td class="center">0%</td><td class="center">76%</td><td class="center">58%</td><td class="center">59%</td><td class="center">68%</td><td class="center">76%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table aria-label="Variación mensual (Total Pólizas)">
+      <caption>Variación mensual (Total Pólizas)</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th class="center">Feb 25</th><th class="center">Mar 25</th><th class="center">Abr 25</th><th class="center">May 25</th><th class="center">Jun 25</th><th class="center">Jul 25</th><th class="center">Ago 25</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Δ % Total Pólizas</td>
+          <td class="center">—</td><td class="center">-67%</td><td class="center">+467%</td><td class="center">+82%</td><td class="center">+200%</td><td class="center">+30%</td><td class="center">+30%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Tabla 3 — Vendedores -->
+    <table aria-label="Tabla 3 — Vendedores (panel comercial)">
+      <caption>Tabla 3 — Vendedores (panel comercial)</caption>
+      <thead>
+        <tr>
+          <th>Indicador / Mes</th>
+          <th class="center">Feb 25</th><th class="center">Mar 25</th><th class="center">Abr 25</th><th class="center">May 25</th><th class="center">Jun 25</th><th class="center">Jul 25</th><th class="center">Ago 25</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Vendedores con venta</td><td class="center">5</td><td class="center">2</td><td class="center">11</td><td class="center">21</td><td class="center">41</td><td class="center">54</td><td class="center">69</td></tr>
+        <tr><td>Vendedores nuevos</td><td class="center">5</td><td class="center">1</td><td class="center">9</td><td class="center">16</td><td class="center">26</td><td class="center">24</td><td class="center">26</td></tr>
+        <tr><td>% Nuevos</td><td class="center">100%</td><td class="center">50%</td><td class="center">82%</td><td class="center">76%</td><td class="center">63%</td><td class="center">44%</td><td class="center">38%</td></tr>
+        <tr><td>% Repetidos</td><td class="center">0%</td><td class="center">50%</td><td class="center">18%</td><td class="center">24%</td><td class="center">37%</td><td class="center">56%</td><td class="center">62%</td></tr>
+        <tr><td>Prom. Pólizas/Vendedor</td><td class="center">1.8</td><td class="center">1.5</td><td class="center">1.5</td><td class="center">1.5</td><td class="center">2.3</td><td class="center">2.2</td><td class="center">2.3</td></tr>
+        <tr><td>% Vendedores ≥3 ventas</td><td class="center">20%</td><td class="center">0%</td><td class="center">18%</td><td class="center">14%</td><td class="center">37%</td><td class="center">28%</td><td class="center">36%</td></tr>
+        <tr><td>% s/venta con histórico*</td><td class="center"></td><td class="center">80%</td><td class="center">67%</td><td class="center">67%</td><td class="center">52%</td><td class="center">47%</td><td class="center">47%</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Tabla 4 — Prima promedio por duración (UF) -->
+    <table aria-label="Tabla 4 — Prima promedio por duración (UF)">
+      <caption>Tabla 4 — Prima promedio por duración (UF)</caption>
+      <thead>
+        <tr>
+          <th>Duración</th><th class="right">Pólizas</th><th class="right">Prima promedio (UF)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>12 meses</td><td class="right">30</td><td class="right">14,2</td></tr>
+        <tr><td>24 meses</td><td class="right">399</td><td class="right">25,5</td></tr>
+        <tr class="total-row"><td><b>Total</b></td><td class="right"><b>429</b></td><td class="right"><b>24,7</b></td></tr>
+      </tbody>
+    </table>
+
+    <!-- Tabla 5 — Dealers nuevos con venta (mensual) -->
+    <table aria-label="Tabla 5 — Dealers nuevos con venta (mensual)">
+      <caption>Tabla 5 — Dealers nuevos con venta (mensual)</caption>
+      <thead>
+        <tr>
+          <th>Mes</th><th class="center">Dealers nuevos</th><th class="center">Vendedores en dealers nuevos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Feb 25</td><td class="center">3</td><td class="center">5</td></tr>
+        <tr><td>Mar 25</td><td class="center">0</td><td class="center">0</td></tr>
+        <tr><td>Abr 25</td><td class="center">8</td><td class="center">9</td></tr>
+        <tr><td>May 25</td><td class="center">9</td><td class="center">11</td></tr>
+        <tr><td>Jun 25</td><td class="center">12</td><td class="center">18</td></tr>
+        <tr><td>Jul 25</td><td class="center">11</td><td class="center">14</td></tr>
+        <tr><td>Ago 25</td><td class="center">5</td><td class="center">6</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Tabla 6 — Velocidad de venta (acum. diario — Pólizas) -->
+    <table aria-label="Tabla 6 — Velocidad de venta (acumulado diario — Pólizas)">
+      <caption>Tabla 6 — Velocidad de venta (acumulado diario — Pólizas)</caption>
+      <thead>
+        <tr>
+          <th>Día</th><th class="center">Jun 25</th><th class="center">Jul 25</th><th class="center">Ago 25</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="center">0</td><td class="center">1</td><td class="center">3</td></tr>
+        <tr><td>2</td><td class="center">1</td><td class="center">3</td><td class="center">7</td></tr>
+        <tr><td>3</td><td class="center">3</td><td class="center">6</td><td class="center">8</td></tr>
+        <tr><td>4</td><td class="center">5</td><td class="center">12</td><td class="center">10</td></tr>
+        <tr><td>5</td><td class="center">8</td><td class="center">14</td><td class="center">13</td></tr>
+        <tr><td>6</td><td class="center">12</td><td class="center">14</td><td class="center">18</td></tr>
+        <tr><td>7</td><td class="center">15</td><td class="center">16</td><td class="center">25</td></tr>
+        <tr><td>8</td><td class="center">15</td><td class="center">22</td><td class="center">37</td></tr>
+        <tr><td>9</td><td class="center">18</td><td class="center">29</td><td class="center">45</td></tr>
+        <tr><td>10</td><td class="center">18</td><td class="center">33</td><td class="center">46</td></tr>
+        <tr><td>11</td><td class="center">22</td><td class="center">38</td><td class="center">48</td></tr>
+        <tr><td>12</td><td class="center">26</td><td class="center">42</td><td class="center">52</td></tr>
+        <tr><td>13</td><td class="center">32</td><td class="center">42</td><td class="center">55</td></tr>
+        <tr><td>14</td><td class="center">35</td><td class="center">45</td><td class="center">61</td></tr>
+        <tr><td>15</td><td class="center">35</td><td class="center">49</td><td class="center">64</td></tr>
+        <tr><td>16</td><td class="center">35</td><td class="center">52</td><td class="center">73</td></tr>
+        <tr><td>17</td><td class="center">41</td><td class="center">56</td><td class="center">73</td></tr>
+        <tr><td>18</td><td class="center">46</td><td class="center">65</td><td class="center">80</td></tr>
+        <tr><td>19</td><td class="center">48</td><td class="center">74</td><td class="center">83</td></tr>
+        <tr><td>20</td><td class="center">51</td><td class="center">74</td><td class="center">88</td></tr>
+        <tr><td>21</td><td class="center">54</td><td class="center">78</td><td class="center">92</td></tr>
+        <tr><td>22</td><td class="center">54</td><td class="center">83</td><td class="center">103</td></tr>
+        <tr><td>23</td><td class="center">59</td><td class="center">85</td><td class="center">110</td></tr>
+        <tr><td>24</td><td class="center">63</td><td class="center">90</td><td class="center">116</td></tr>
+        <tr><td>25</td><td class="center">69</td><td class="center">97</td><td class="center">123</td></tr>
+        <tr><td>26</td><td class="center">76</td><td class="center">100</td><td class="center">126</td></tr>
+        <tr><td>27</td><td class="center">84</td><td class="center">100</td><td class="center">131</td></tr>
+        <tr><td>28</td><td class="center">87</td><td class="center">106</td><td class="center">138</td></tr>
+        <tr><td>29</td><td class="center">87</td><td class="center">110</td><td class="center">147</td></tr>
+        <tr><td>30</td><td class="center">93</td><td class="center">115</td><td class="center">156</td></tr>
+        <tr><td>31</td><td class="center">93</td><td class="center">121</td><td class="center">157</td></tr>
+      </tbody>
+    </table>
+    <div class="note">En el mes en curso, dejar <b>vacío</b> desde <i>día_corte + 1</i>. (Aplicado: corte 31/08 → se muestra hasta el día 31).</div>
+
+    <!-- Tabla 7 — Evolución de vendedores con venta -->
+    <table aria-label="Tabla 7 — Evolución de vendedores con venta">
+      <caption>Tabla 7 — Evolución de vendedores con venta</caption>
+      <thead>
+        <tr>
+          <th>Mes</th><th class="center">Vendedores con venta</th><th class="center">Nuevos</th><th class="center">Repetidos</th><th class="center">% Nuevos</th><th class="center">% Repetidos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Feb 25</td><td class="center">5</td><td class="center">5</td><td class="center">0</td><td class="center">100%</td><td class="center">0%</td></tr>
+        <tr><td>Mar 25</td><td class="center">2</td><td class="center">1</td><td class="center">1</td><td class="center">50%</td><td class="center">50%</td></tr>
+        <tr><td>Abr 25</td><td class="center">11</td><td class="center">9</td><td class="center">2</td><td class="center">82%</td><td class="center">18%</td></tr>
+        <tr><td>May 25</td><td class="center">21</td><td class="center">16</td><td class="center">5</td><td class="center">76%</td><td class="center">24%</td></tr>
+        <tr><td>Jun 25</td><td class="center">41</td><td class="center">26</td><td class="center">15</td><td class="center">63%</td><td class="center">37%</td></tr>
+        <tr><td>Jul 25</td><td class="center">54</td><td class="center">24</td><td class="center">30</td><td class="center">44%</td><td class="center">56%</td></tr>
+        <tr><td>Ago 25</td><td class="center">69</td><td class="center">26</td><td class="center">43</td><td class="center">38%</td><td class="center">62%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">* % s/venta con histórico se calcula sobre vendedores con al menos 1 venta en el mes y con historial previo (ver Base de Vendedores).</div>
+  </div>
+</body>
+</html>
